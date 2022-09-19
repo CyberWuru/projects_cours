@@ -1,0 +1,44 @@
+import random
+import sys
+import time
+
+print(50 * '-')
+print("*** BIENVENUE DANS LE JEU DU NUMERO A DEVINER! ***")
+print(50 * '-')
+
+
+nombre_a_deviner = random.randint(1, 100)
+
+nombre_tentatives = 0
+tentatives_restantes = 5
+
+
+while nombre_tentatives < tentatives_restantes:
+    nombre_choisi = input("Entrez votre nombre: ")
+    if not nombre_choisi.isdigit():
+        print("Veuillez entrer un nombre valide")
+        continue
+
+    if int(nombre_choisi) == nombre_a_deviner:
+        nombre_tentatives += 1
+        print(f"BRAVO! c'était bien {nombre_choisi}")
+        print(f"Vous avez réussi en {nombre_tentatives} coups!")
+        break
+
+    elif int(nombre_choisi) != nombre_a_deviner:
+        tentatives_restantes -= 1
+        if int(tentatives_restantes) == int(nombre_tentatives):
+            print(f"Plus d'essais! Le bon numéro était : {nombre_a_deviner}")
+            print("Merci d'avoir joué!")
+            time.sleep(1)
+            sys.exit()
+
+        if int(nombre_choisi) > nombre_a_deviner:
+            print("C'est moins")
+
+        else:
+            print("C'est plus")
+
+        print(f"Il vous reste {tentatives_restantes} tentatives")
+        print("Essayez encore, ")
+print(50 * '-')
