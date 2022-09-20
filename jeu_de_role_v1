@@ -1,0 +1,386 @@
+import random as r
+import time as t
+import sys
+
+j_potions = 3
+
+for i in range(1):
+    p_un = r.randint(5, 15)
+
+for i in range(1):
+    i_un = r.randint(5, 10)
+    i_deux = r.randint(5, 10)
+    i_trois = r.randint(5, 10)
+    i_quatre = r.randint(5, 10)
+    i_cinq = r.randint(5, 10)
+    i_six = r.randint(5, 10)
+    i_sept = r.randint(5, 10)
+    i_huit = r.randint(5, 10)
+    i_neuf = r.randint(5, 10)
+    i_dix = r.randint(5, 10)
+
+for e in range(1):
+    e_un = r.randint(5, 15)
+    e_deux = r.randint(5, 15)
+    e_trois = r.randint(5, 15)
+    e_quatre = r.randint(5, 15)
+    e_cinq = r.randint(5, 15)
+    e_six = r.randint(5, 15)
+    e_sept = r.randint(5, 15)
+    e_huit = r.randint(5, 15)
+    e_neuf = r.randint(5, 15)
+    e_dix = r.randint(5, 15)
+
+j_pdv = 50
+
+
+e_pdv = 50
+
+
+var_soin = 0
+
+
+print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-")
+print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-")
+print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n")
+
+print("Bienvenue dans la quête d'escorte de Mariana!\n")
+
+print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-")
+print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-")
+print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n")
+
+while True:
+
+    choix_nom = input("Déclinez votre nom aventurier/e ? : \n====> ")
+    print()
+
+    if not choix_nom.isalpha():
+
+        print("Veuillez entrer un nom valide! On ne sauve pas de princesses avec un nom ridicule...\n")
+
+        continue
+    elif len(choix_nom) <= 1:
+
+        print("Sans nom vous n'irez pas bien loin.. Une seule lettre c'est comme un chiffre, ca ne fait pas de vous "
+              "un héro..Allez..\n")
+
+    else:
+
+        break
+
+t.sleep(1)
+
+print(f"Vous êtes {choix_nom}, ancien pirate à la solde d'un capitaine verreux..\n")
+t.sleep(0)
+print("Après bon nombre de voyages vous avez décidé de vous repentir auprès de la couronne..\n")
+t.sleep(0)
+print("Votre noblesse et chevalerie vont ont mené à la gloire!\n")
+t.sleep(0)
+print("Vous êtes désormais le garde royal!\n")
+t.sleep(0)
+
+print("...\n")
+
+print("Alors que vous escortiez la princesse Mariana, votre chemin vous a menée à la lisière du bois de Servina..\n")
+t.sleep(0)
+print("\"...\"Vous percevez du mouvement derrière un buisson..\n")
+t.sleep(0)
+print("\n Un bandit surgit devant vous avec une arme et l'air lubrique!\n")
+t.sleep(0)
+print("VOUS DEVEZ PROTEGER LA PRINCESSE!\n")
+t.sleep(0)
+print("En garde! Il se prépare à vous affronter!\n")
+t.sleep(0)
+print("\t\tVotre combat va commencer!\n")
+t.sleep(0)
+
+print(100 * '-')
+
+print("\n")
+
+print("Veuillez faire votre choix ! :\n ")
+
+CHOIX = """
+
+1: Attaquer
+2: Se soigner
+3: Abandonner """
+
+print("Que décidez vous de faire ?\n\n1: Attaquer\n2: Se soigner\n3: Abandonner\n")
+
+print(f"Points de vie de l'ennemi : {e_pdv} pdv\n")
+
+# 1 ------------------------------------------------------------------------------------
+# 1------------------------------------------------------------------------------------
+# 1------------------------------------------------------------------------------------
+
+
+while True:
+
+    choix_gamer = input("Votre choix :\n")
+
+    if not choix_gamer.isdigit():
+        print("Veuillez entrer un choix valide!")
+
+    elif choix_gamer not in CHOIX:
+        print("Veuillez faire un choix valide!")
+
+        continue
+
+    if choix_gamer == '1':
+
+        e_pdv = e_pdv - i_un
+
+        print(35 * "-")
+
+        print("Premier tour ======> \n")
+
+        print(f"Vous avez infligé {i_un} de dégâts!")
+
+        print(f"Il lui reste {e_pdv}/50 points de vie!\n")
+
+        print(35 * '*')
+
+        print()
+
+        print("L'ennemi riposte !\n")
+
+        j_pdv = j_pdv - e_un
+
+        print(f"Aie!.. Vous subissez {e_un} de dégâts..\n")
+
+        print(f"Il vous reste {j_pdv}/50 points de vie!\n")
+
+
+    elif choix_gamer == '2':
+
+        if j_pdv < 50:
+
+            var_soin = j_pdv + p_un
+
+            print(f"Vous vous êtes soignés de {p_un}\n")
+
+            print(f"Il vous reste {j_pdv} points de vie.\n")
+
+        else:
+
+            print("Il n'y a rien a soigner! Au combat ou à la mort!!\n")
+
+            print(f"Il vous reste toujours vos {j_potions} potions.\n")
+
+        continue
+
+    if j_potions == 0:
+
+        print("Vous n'avez plus de potions!")
+
+        continue
+
+    elif choix_gamer == '3':
+
+        print("Sérieusement ?...")
+
+        t.sleep(1)
+
+        print("Deja?")
+
+        choix_abandon_trop_tot = input("Vous en êtes sur ? o/n : \n")
+
+        if not choix_abandon_trop_tot.isalpha() and choix_abandon_trop_tot == 'o' or 'O' or "oui" or "OUI" or 'y' or 'Y' or "yes" or "YES":
+            print("Vous décidez d'abandonner et mourrez!\n")
+
+            print(".. et le bandit s'est barré avec la princesse..ET L'OR")
+
+            print("On a vu mieux comme courage..\n")
+
+            print("Partie terminée!")
+
+            t.sleep(2)
+
+            sys.exit()
+# 2 ------------------------------------------
+# 2------------------------------------------
+
+    print("Et maintenant ? Que décidez vous de faire ?\n\n1: Attaquer\n2: Se soigner\n3: "
+          "Abandonner\n")
+
+    choix_gamer_deux = input()
+
+    if not choix_gamer_deux.isdigit():
+        print("Veuillez entrer un choix valide!")
+
+    elif choix_gamer_deux not in CHOIX:
+        print("Veuillez faire un choix valide!")
+
+        continue
+
+    if choix_gamer_deux == '1':
+
+        print(35 * "-")
+
+        e_pdv = e_pdv - i_deux
+
+        print(f"Bien! Vous avez infligé {i_deux} de dégâts!\n")
+
+        if e_pdv <= 0:
+
+            print("Votre bravoure vous a mené à la victoire chevalier!\n")
+            print("La princesse vous est désormais éternellement redevable!\n")
+            print("Bravo pour cette partie et merci d'avoir joué! :) ")
+            sys.exit()
+
+        else:
+
+            print(f"=======> Il reste {e_pdv}/50 points de vie à l'ennemi.\n")
+
+
+            print("Il riposte!\n\n")
+
+            t.sleep(1)
+
+            j_pdv = j_pdv - e_deux
+
+            if j_pdv <= 0:
+
+                print("Hélas vous n'avez pu honorer vos promesses de chevalier...\n")
+                print("Notre belle princesse est partie avec le malfrat et votre argent..\n")
+                print("Vous gisez la...Servant de nourriture aux corbeaux..")
+                sys.exit()
+
+            print(f"Vous subissez {e_deux} points de dégâts!\n ")
+
+
+            print(f"=======> Il vous reste {j_pdv}/50 points de vie!\n")
+
+            continue
+
+    elif choix_gamer_deux == '2':
+
+        print(35 * "-")
+
+        if j_pdv >= 50:
+
+            print("Vous êtes deja au max 50/50 pv")
+
+        else:
+
+            j_pdv = j_pdv + p_un
+
+            print(f"Vous vous êtes soigné ! Il vous reste {j_pdv}/50 pdv!\n")
+
+            j_potions -= 1
+
+            print(f"=======> Il vous reste {j_potions} potions\n")
+
+        continue
+
+    if j_potions == 0:
+
+        print("Vous n'avez plus de potions!")
+
+        continue
+
+    elif choix_gamer_deux == '3':
+
+        print(35 * "-")
+
+        print("Vous décidez d'abandonner et mourrez!\n")
+        print(".. et le bandit s'est barré avec la princesse..ET L'OR\n")
+
+        t.sleep(3)
+        sys.exit()
+
+# 3 ------------------------------------------
+# 3------------------------------------------
+
+    print("Et maintenant ? Que décidez vous de faire ?\n\n1: Attaquer\n2: Se soigner\n3: "
+          "Abandonner\n")
+
+    choix_gamer_trois = input()
+
+    if not choix_gamer_deux.isdigit():
+        print("Veuillez entrer un choix valide!")
+
+    elif choix_gamer_deux not in CHOIX:
+        print("Veuillez faire un choix valide!")
+
+        continue
+
+    if choix_gamer_trois == '1':
+
+        print(35 * "-")
+
+        e_pdv = e_pdv - i_deux
+
+        print(f"Bien! Vous avez infligé {i_deux} de dégâts!\n")
+
+        if e_pdv <= 0:
+
+            print("Votre bravoure vous a mené à la victoire chevalier!\n")
+            print("La princesse vous est désormais éternellement redevable!\n")
+            print("Bravo pour cette partie et merci d'avoir joué! :) ")
+            sys.exit()
+
+        else:
+
+            print(f"=======> Il reste {e_pdv}/50 points de vie à l'ennemi.\n")
+
+
+            print("Il riposte!\n\n")
+
+            t.sleep(1)
+
+            j_pdv = j_pdv - e_deux
+
+            if j_pdv <= 0:
+
+                print("Hélas vous n'avez pu honorer vos promesses de chevalier...\n")
+                print("Notre belle princesse est partie avec le malfrat et votre argent..\n")
+                print("Vous gisez la...Servant de nourriture aux corbeaux..")
+                sys.exit()
+
+            print(f"Vous subissez {e_deux} points de dégâts!\n ")
+
+
+            print(f"=======> Il vous reste {j_pdv}/50 points de vie!\n")
+
+            continue
+
+    elif choix_gamer_trois == '2':
+
+        print(35 * "-")
+
+        if j_pdv >= 50:
+
+            print("Vous êtes deja au max 50/50 pv")
+
+        else:
+
+            j_pdv = j_pdv + p_un
+
+            print(f"Vous vous êtes soigné ! Il vous reste {j_pdv}/50 pdv!\n")
+
+            j_potions -= 1
+
+            print(f"=======> Il vous reste {j_potions} potions\n")
+
+        continue
+
+    if j_potions == 0:
+
+        print("Vous n'avez plus de potions!")
+
+        continue
+
+    elif choix_gamer_trois == '3':
+
+        print(35 * "-")
+
+        print("Vous décidez d'abandonner et mourrez!\n")
+        print(".. et le bandit s'est barré avec la princesse..ET L'OR\n")
+
+        t.sleep(3)
+        sys.exit()
+
+
