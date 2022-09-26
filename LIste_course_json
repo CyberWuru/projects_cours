@@ -1,0 +1,139 @@
+import os
+import sys
+import json
+
+
+CUR_DIR = os.path.dirname(__file__)
+LISTE_PATH = os.path.join(CUR_DIR, "lista.json")
+
+
+CHOIX = """
+
+\U0001F347*$*$*$*$*$*$*$*$*$\U0001F345*$*$*$*$*$*$*$*$*$*$*$\U0001F33D
+
+
+
+BIENVENUE 
+
+
+\U0001F347*$*$*$*$*$*$*$*$*$\U0001F345*$*$*$*$*$*$*$*$*$*$*$\U0001F33D
+
+1 : AJouter un produit à la liste.
+2 : Retirer un objet d ela liste.
+3 : Consulter la liste.
+4 : Vider la liste.
+5 : Sortir.
+
+*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$
+\n
+"""
+
+# -----------------------------------------------
+
+print(CHOIX)
+
+
+# -----------------------------------------------
+
+if os.path.exists(LISTE_PATH):
+
+    with open(LISTE_PATH, "r") as f:
+
+        LISTE = json.load(f)
+else:
+    LISTE = []
+
+
+while True:
+
+    choix_user = input("Votre choix : \n")
+
+    if not choix_user.isdigit():
+
+        print("Veuillez faire un choix valide\n\n")
+
+        continue
+
+    elif choix_user not in CHOIX:
+
+        print("Veuillez faire un choix valide..\n\n")
+
+        continue
+
+    # --------------------------------------------------
+
+    if choix_user == "1":
+
+        while choix_user == "1":
+
+            produit = input("Que souhaitez vous ajouter?\n")
+
+            LISTE.append(produit)
+
+            print(f"Le produit {produit} a bien été ajouté à la liste.\n")
+
+            print(LISTE)
+
+            nv_choix = input("Ajouter autre chose ? o/n : \n")
+
+            if nv_choix == "o":
+
+                continue
+
+            else:
+
+                break
+
+    # --------------------------------------------------
+
+    elif choix_user == "2":
+
+        choix_del = input("Que souhaitez vous retirer ?")
+
+        if choix_del not in LISTE:
+
+            print("Cet élement n est pas dans liste.")
+
+            continue
+
+        else:
+
+            print(f"{choix_del} a bien été retiré.")
+
+        continue
+
+    # --------------------------------------------------
+
+    elif choix_user == "3":
+
+        print(f"Voici votre liste : {LISTE}\n\n")
+
+        if not LISTE:
+
+            print("Il n'y a aucun élement à afficher.")
+
+    # --------------------------------------------------
+
+    elif choix_user == "4":
+
+        choix_clean = input("En êtesvous sur? o/n\n")
+
+        if choix_clean == "o":
+
+            LISTE.clear()
+
+        else:
+
+            continue
+
+    # --------------------------------------------------
+
+    elif choix_user == "5":
+
+        with open(LISTE_PATH, "w") as f:
+
+            json.dump(LISTE, f, indent=4)
+
+        print("À bientôt !\U0001F345\U0001F955")
+
+        sys.exit()
